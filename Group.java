@@ -90,16 +90,15 @@ public class Group {
 	public void sort () {
 		Student tempStr;
 			
-			  for (int t = 0; t < groupCount - 1; t++) {
-		            for (int i= 0; i < groupCount - t -1; i++) {
-		            	
-		                if(compare(group[i+1].getSurename(), group[i].getSurename())) {
-			                    tempStr = group[i];
-			                    group[i]=group[i+1];
-			                    group[i+1]=tempStr; 	
-		                } 
-		            }
-		        }	
+		for (int t = 0; t < groupCount - 1; t++) {
+		    for (int i= 0; i < groupCount - t -1; i++) {
+		        if(compare(group[i+1].getSurename(), group[i].getSurename())) {
+		        		tempStr = group[i];
+			            group[i]=group[i+1];
+			            group[i+1]=tempStr; 	
+		         } 
+		     }
+		}	
 	}
 	@Override
 	public String toString() {
