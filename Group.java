@@ -43,14 +43,14 @@ public class Group {
 	public void deleteStudent (Student one) {
 		for (int i = 0; i < group.length;i++) {
 			if (group[i] != null) {
-				if (group[i].equals(one)) {
+				if (group[i] == one) {
 					group[i] = null;
 					groupCount--;
 				}
 			}
 		}
 	}
-	public int findStudent (String sureName) {
+	public Student findStudent (String sureName) {
 		int result = 11;
 		try {
 			sort();
@@ -66,7 +66,7 @@ public class Group {
 				System.out.println("There is no student with this surename " + sureName + " in this group");
 			}
 		
-		return result;
+		return group[result];
 	}
 	
 	private boolean compare(String one, String two) {
