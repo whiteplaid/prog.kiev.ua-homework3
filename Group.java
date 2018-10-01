@@ -50,14 +50,16 @@ public class Group {
 			}
 		}
 	}
-	public Student findStudent (String sureName) {
+	public Student[] findStudent (String sureName) {
 		int result = 11;
+		Student[] students = new Student[groupCount];
 		try {
 			sort();
 		for(int i = 0; i < group.length;i++) {
 			
 				if (group[i].getSurename().equals(sureName)) {
 					result = i;
+					students[i] = group[i];
 					System.out.println(group[result].getSurename() +" has been found in the group by number " + (result + 1));
 				}
 		}
@@ -65,8 +67,8 @@ public class Group {
 			} catch (ArrayIndexOutOfBoundsException e) {
 				System.out.println("There is no student with this surename " + sureName + " in this group");
 			}
-		
-		return group[result];
+
+		return students;
 	}
 	
 	private boolean compare(String one, String two) {
